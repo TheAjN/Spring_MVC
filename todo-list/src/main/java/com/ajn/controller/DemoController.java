@@ -1,10 +1,13 @@
 package com.ajn.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.ajn.service.DemoService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,7 +15,20 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class DemoController {
 	
+	//== Fields ==
+	private final DemoService demoService;
+	
+	
+	//== Constructors ==
+	
+	@Autowired
+	public DemoController(DemoService demoService) {
+		this.demoService = demoService;
+	}
 
+
+	// == Request Methods == 
+	
 	// http://localhost:8080/todo-list/hello
 	@GetMapping("Hello")
 //	@RequestMapping(value = "/Hello", method = RequestMethod.GET)
@@ -27,7 +43,9 @@ public class DemoController {
 	@GetMapping("welcome") // here "/" is not needed because it is mentioned in the .addMapping in WebAppInitializer.class (DispatcherServlet)
 	public String welcome(Model model) {
 		
-		model.addAttribute("user","Abhishek J");  //"user" is key , "Abhishek J" is value. Here "user" will be mapped to the user in welcome.jsp
+	//	model.addAttribute("user","Abhishek J");  //"user" is key , "Abhishek J" is value. Here "user" will be mapped to the user in welcome.jsp
+		
+		model.addAttribute("name", demoService.getHelloMessage("Abhishek J"));
 		
 		// prefix + name + suffix
 		// /WEB-INF/view/welcome.jsp
@@ -35,12 +53,15 @@ public class DemoController {
 						//ie, "welcome" won't be displayed in the browser, but the contents of welcome.jsp will be displayed
 	}
 	
+	// == Model Attributes == 
+	
 	@ModelAttribute("welcomeMessage") //Another way of adding attributes to the model is by @ModelAttribute, 
 	public String welcomeMessage() {  //Where "welcomeMessage" acts as a key and the returned value is the value which will be displayed in the webpage
 		
 		log.info("welcomeMessage() called"); 
 		
-		return "Welcome to this Demo Application.";
+	//	return "Welcome to this Demo Application.";
+		return demoService.getWelcomeMessage();
 	}
 	
 }
