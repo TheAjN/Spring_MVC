@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ajn.service.DemoService;
@@ -39,13 +40,15 @@ public class DemoController {
 	
 	
 	// http://localhost:8080/todo-list/welcome
+	// http://localhost:8080/todo-list/welcome?user=Abhishek_J&age=24  //user and age here are query/Request parameters
 	
 	@GetMapping("welcome") // here "/" is not needed because it is mentioned in the .addMapping in WebAppInitializer.class (DispatcherServlet)
-	public String welcome(Model model) {
+	public String welcome(@RequestParam String user, @RequestParam int age, Model model) {
 		
 	//	model.addAttribute("user","Abhishek J");  //"user" is key , "Abhishek J" is value. Here "user" will be mapped to the user in welcome.jsp
 		
-		model.addAttribute("name", demoService.getHelloMessage("Abhishek J"));
+		model.addAttribute("name", demoService.getHelloMessage(user));
+		model.addAttribute("age", age);
 		
 		// prefix + name + suffix
 		// /WEB-INF/view/welcome.jsp
@@ -57,7 +60,8 @@ public class DemoController {
 	
 	@ModelAttribute("welcomeMessage") //Another way of adding attributes to the model is by @ModelAttribute, 
 	public String welcomeMessage() {  //Where "welcomeMessage" acts as a key and the returned value is the value which will be displayed in the webpage
-		
+									//Since this Model attribute method is outside/not encapsulated in any Request method
+									// this attribute can be used in any .jsp file 
 		log.info("welcomeMessage() called"); 
 		
 	//	return "Welcome to this Demo Application.";
