@@ -1,5 +1,6 @@
 package com.ajn.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +18,11 @@ public class todoData {
 
 	// constructor
 	public todoData() {
+		
+		// add some dummy data, using the add item method so it sets the id field
+		addItem(new todoItem("first", "first details", LocalDate.now()));
+		addItem(new todoItem("second", "second details", LocalDate.now()));
+		addItem(new todoItem("third", "third details", LocalDate.now()));
 	}
 
 	// == public methods
@@ -40,8 +46,7 @@ public class todoData {
 	}
 
 	public void removeItem(int id) {
-		ListIterator<todoItem> listIterator = items.listIterator();	
-		boolean quit = false;
+		ListIterator<todoItem> listIterator = items.listIterator();
 
 		while(listIterator.hasNext()) {
 			todoItem item = listIterator.next();
@@ -54,6 +59,48 @@ public class todoData {
 		
 	}
 	
+	public todoItem getItem(int id) {
+		
+		for(todoItem item: items) {
+			if(item.getId() == id) {
+				return item;
+				
+			}
+		}
+		return null;
+	}
+	
+	public void updateItem(@NonNull todoItem toupdate) {
+		
+		ListIterator<todoItem> listIterator = items.listIterator();
+
+		while(listIterator.hasNext()) {
+			todoItem item = listIterator.next();
+			
+			if(item.equals(toupdate)) { // Here, the @EqualsAndHashcode annotation, we have specified an id to check if items are 
+										//equal or not, if the ids are same, then the existing todoitem instance can be replace/updated
+				listIterator.set(toupdate);
+				break;
+			}
+		}
+	}
+	
 	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
