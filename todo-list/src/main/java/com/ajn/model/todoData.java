@@ -23,6 +23,7 @@ public class todoData {
 		addItem(new todoItem("first", "first details", LocalDate.now()));
 		addItem(new todoItem("second", "second details", LocalDate.now()));
 		addItem(new todoItem("third", "third details", LocalDate.now()));
+		addItem(new todoItem("fourth", "fourth details", LocalDate.now()));
 	}
 
 	// == public methods

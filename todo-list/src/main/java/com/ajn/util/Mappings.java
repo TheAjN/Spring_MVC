@@ -7,9 +7,10 @@ public final class Mappings { //Since this class will only contain public static
 	
 	//== constants == 
 	public static final String ITEMS = "items";
+	public static final String ADD_ITEM ="addItem";
 	
 	// == constructor == 
-//	private Mappings() {} // The reason constructor is private here is because, there is no reason to instantiate 
+	private Mappings() {} // The reason constructor is private here is because, there is no reason to instantiate 
 						//the Mappings class
 		
 }

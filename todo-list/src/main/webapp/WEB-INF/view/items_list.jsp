@@ -1,9 +1,7 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  <!-- JSTL Tag declared  -->
+<html>  
 <head>
-<title>To do Items</title> <!-- This jsp file is will be called 
-					when the Request method welcome() returns "welcome", 
-					which is equivalent to this .jsp file's name-->
+<title>To do Items</title>
 </head>
 <body>
 	<div align = "center">

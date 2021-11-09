@@ -1,5 +1,13 @@
-com\ajn\config\WebConfig.class
+com\ajn\util\ViewNames.class
 com\ajn\config\WebAppInitializer.class
-com\ajn\controller\DemoController.class
+com\ajn\model\todoItem.class
+com\ajn\service\todoItemServiceImpl.class
+com\ajn\util\Mappings.class
+com\ajn\model\todoData.class
 com\ajn\service\DemoService.class
+com\ajn\controller\todoItemController.class
+com\ajn\config\WebConfig.class
+com\ajn\util\AttributeNames.class
+com\ajn\controller\DemoController.class
 com\ajn\service\DemoServiceImpl.class
+com\ajn\service\todoItemService.class
