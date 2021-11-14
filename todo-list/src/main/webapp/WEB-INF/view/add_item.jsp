@@ -8,6 +8,8 @@
 <body>
 	<div align = "center">
 		<form:form method="POST" modelAttribute = "${AttributeNames.TODO_ITEM}"> <!-- sending data to Request method processitem() -->
+																				<!-- AttributeNames.TODO_ITEM is "todoItem", this "todoItem" is from
+																				the modelAttribute(todoItem) in @GetMapping request method -->
 			
 			<table>
 
