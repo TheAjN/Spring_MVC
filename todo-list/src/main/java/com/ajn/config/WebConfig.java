@@ -39,6 +39,6 @@ public class WebConfig implements WebMvcConfigurer {
 //		registry.addViewController("/").setViewName(ViewNames.HOME);
 //	}
 	
-	//NOTE - By deafult index.jsp will run as its first webpage if addViewControllers() does not set the first page as home.jsp
+	//NOTE - By default index.jsp will run as its first webpage if addViewControllers() does not set the first page as home.jsp
 	
 }
