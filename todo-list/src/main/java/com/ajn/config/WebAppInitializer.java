@@ -26,7 +26,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
 										//but since we are creating a web application and not a console application,
 										//AnnotationConfigWebApplicationContext class should be used
 		//Here context.register() means we are registering a config class, only class with @Configuration annotation will work here
-		
+
 		
 		//create the dispatcher servlet
 		DispatcherServlet dispatcherServlet = new DispatcherServlet(context);

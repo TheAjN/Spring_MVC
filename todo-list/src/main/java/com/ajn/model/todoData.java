@@ -9,7 +9,7 @@ import java.util.ListIterator;
 import lombok.NonNull;
 
 //This class is immutable
-public class todoData {
+public final class todoData {
 
 	// == fields ==
 	private static int idValue = 1;

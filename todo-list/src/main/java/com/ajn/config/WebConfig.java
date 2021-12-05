@@ -21,9 +21,9 @@ public class WebConfig implements WebMvcConfigurer {
 	private static final String VIEW_RESOLVER_SUFFIX=".jsp";
 	
 	
-	// == bean methods
+	// == bean methods ==
 	@Bean
-	public ViewResolver viewResolver() {
+	public ViewResolver viewResolver() {  //To set the location of the jsp folder for the DispatcherServlet to work on
 		
 		UrlBasedViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setPrefix(VIEW_RESOLVER_PREFIX);
@@ -33,12 +33,12 @@ public class WebConfig implements WebMvcConfigurer {
 	}
 
 
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		
-		registry.addViewController("/").setViewName(ViewNames.HOME);
-	}
+//	@Override
+//	public void addViewControllers(ViewControllerRegistry registry) {  //to run the first webpage of the code
+//		
+//		registry.addViewController("/").setViewName(ViewNames.HOME);
+//	}
 	
-	
+	//NOTE - By deafult index.jsp will run as its first webpage if addViewControllers() does not set the first page as home.jsp
 	
 }

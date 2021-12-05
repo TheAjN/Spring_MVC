@@ -2,7 +2,7 @@
 <%@ page import= "com.ajn.util.Mappings" %>
 <html>  
 <head>
-<title>Todo List Application</title>
+<title>(INDEX) Todo List Application(I</title>
 </head>
 <body>
 	<div align = "center">

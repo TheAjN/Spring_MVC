@@ -36,7 +36,7 @@ public class todoItemController {
 					// method name, not the type)
 	public todoData todoData() {
 		// return new todoData();
-		return todoItemService.getData();
+		return todoItemService.getData(); 
 	}
 
 	// == handler methods ==

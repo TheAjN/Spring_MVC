@@ -49,9 +49,9 @@
 				</configuration>
 			</plugin>
 			
-			<plugin>
-   					 <groupId>org.codehaus.cargo</groupId>  <!-- Please be aware that the Maven 2 / Maven 3 plugin of Codehaus Cargo has been retired with our version 1.9.0  and has been superseded by a Maven 3 only plugin. -->
-   					 <artifactId>cargo-maven3-plugin</artifactId>
+	<!-- 	<plugin>
+   					 <groupId>org.codehaus.cargo</groupId> --> <!-- Please be aware that the Maven 2 / Maven 3 plugin of Codehaus Cargo has been retired with our version 1.9.0  and has been superseded by a Maven 3 only plugin. -->
+   			<!-- 		 <artifactId>cargo-maven3-plugin</artifactId>
  					  <version>${cargo.version}</version>
  					  <configuration>
  					  	<container>
@@ -59,7 +59,7 @@
  					  	<type>embedded</type>		
  					  	</container>
  					  </configuration>
-			</plugin>
+			</plugin>   -->	
 							
 		</plugins>
 	</build>
@@ -128,12 +128,12 @@
 		</dependency>
 
 		<!-- Servlet API -->
-			<dependency>
+		  	<dependency>
     				<groupId>javax.servlet</groupId>
  			 	  <artifactId>javax.servlet-api</artifactId>
  			 	  <version>${servlet-api.version}</version>
  			 	  <scope>provided</scope>
-			</dependency>
+			</dependency> 
 			
 		<!-- jstl tags -->
 			<dependency>
