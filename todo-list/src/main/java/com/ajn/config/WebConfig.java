@@ -12,6 +12,8 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import com.ajn.util.ViewNames;
 
+
+
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = "com.ajn")

@@ -1,6 +1,8 @@
 package com.ajn.controller;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ajn.model.todoData;
-import com.ajn.model.todoItem;
+import com.ajn.dao.todoDataDAOImpl;
+import com.ajn.dao.todoItem;
 import com.ajn.service.todoItemService;
 import com.ajn.util.AttributeNames;
 import com.ajn.util.Mappings;
@@ -34,7 +36,7 @@ public class todoItemController {
 	// == model attributes ==
 	@ModelAttribute // Here the name of the model attribute will be todoData(green) (name of the
 					// method name, not the type)
-	public todoData todoData() {
+	public todoDataDAOImpl todoData() {
 		// return new todoData();
 		return todoItemService.getData();
 	}
@@ -54,7 +56,7 @@ public class todoItemController {
 		todoItem todoItem = todoItemService.getItem(id);
 
 		if (todoItem == null) {
-			todoItem = new todoItem("", "", LocalDate.now());
+			todoItem = new todoItem("", "", Date.from(Instant.now()));
 		}
 
 		model.addAttribute(AttributeNames.TODO_ITEM, todoItem); // An empty instance is required for the client to add

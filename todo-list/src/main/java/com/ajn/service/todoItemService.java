@@ -1,7 +1,7 @@
 package com.ajn.service;
 
-import com.ajn.model.todoData;
-import com.ajn.model.todoItem;
+import com.ajn.dao.todoDataDAOImpl;
+import com.ajn.dao.todoItem;
 
 public interface todoItemService {
 
@@ -9,6 +9,6 @@ public interface todoItemService {
 	void removeItem(int id);
 	todoItem getItem(int id);
 	void updateItem(todoItem todoItem);
-	todoData getData();
+	todoDataDAOImpl getData();
 	
 }
